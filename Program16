@@ -1,0 +1,40 @@
+Implement a program to create a Union with variables Name, House Name, City Name, State and
+Pin code each with a length of C_SIZE (user defined constant). Then, read and display the address of a
+person using a variable of the union.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include<stdio.h>
+#include<string.h>
+#define C_SIZE 20
+union test
+{
+char name[C_SIZE];
+char house[C_SIZE];
+char city[C_SIZE];
+char state[C_SIZE];
+char pincode[C_SIZE];
+};
+void main()
+{
+union test t;
+printf("Enter the name of the person : ");
+gets(t.name);
+printf("The name of the person is ");
+puts(t.name);
+printf("Enter the house name of the person : ");
+gets(t.house);
+printf("The house name of the person is ");
+puts(t.house);
+printf("Enter the city of the person : ");
+gets(t.city);
+printf("The city of the person is ");
+puts(t.city);
+printf("Enter the state of the person : ");
+gets(t.state);
+printf("The state of the person is ");
+puts(t.state);
+printf("Enter the pincode of the person : ");
+gets(t.pincode);
+printf("The pincode of the person is ");
+puts(t.pincode);
+}

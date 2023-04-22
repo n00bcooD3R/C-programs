@@ -1,0 +1,31 @@
+Implement a program to check whether the given number is prime number or not using loop and
+decision-making statements.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include<stdio.h>
+void main()
+{
+int number,i,flag=0;
+printf("Enter a number : ");
+scanf("%d", &number);
+if(number<=1)
+{
+printf("The Entered Value is invalid\n");
+exit(0);
+}
+else
+{
+for (i=2;i<(number/2);i++)
+{
+if(number%i==0)
+{
+flag=1;
+break;
+}
+}
+}
+if (flag==1)
+printf("The number %d is not prime",number);
+else
+printf("The number %d is prime",number);
+}

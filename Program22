@@ -1,0 +1,51 @@
+1. Implement a program to create a file and perform the following
+
+i. Write data to the file
+ii. Read the data in a given file & display the file content on console
+iii. Append new data and display on console do the following using pointers
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+int num;
+FILE *fptr;
+fptr = fopen("program.txt","w");
+if(fptr == NULL)
+{
+printf("Error!");
+exit(1);
+}
+printf("Enter number to be added to file: ");
+scanf("%d",&num);
+fprintf(fptr,"%d",num);
+fclose(fptr);
+if ((fptr = fopen("program.txt","r")) == NULL)
+{
+printf("Error! opening file");
+exit(1);
+}
+fscanf(fptr,"%d", &num);
+printf("Values on the file are n=%d\n", num);
+fclose(fptr);
+fptr = fopen("program.txt","a");
+if(fptr == NULL)
+{
+printf("Error!");
+exit(1);
+}
+printf("Enter number to be appended to file : ");
+scanf("%d",&num);
+fprintf(fptr,"%d",num);
+fclose(fptr);
+if ((fptr = fopen("program.txt","r")) == NULL)
+{
+printf("Error! opening file");
+exit(1);
+}
+fscanf(fptr,"%d", &num);
+printf("Values on the file are n=%d\n", num);
+fclose(fptr);
+return 0;
+}

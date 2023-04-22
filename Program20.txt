@@ -1,0 +1,31 @@
+Implement a menu driven program to do the following using pointers
+i. Add two numbers
+ii. Swap two numbers using a user defined function
+----------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+#include <stdio.h>
+void main()
+{
+int first,second,*p,*q,sum,a,temp;
+printf("Enter two integers\n");
+scanf("%d%d", &first, &second);
+p = &first;
+q = &second;
+printf("1:Addition\n2:Swapping\n");
+printf("Enter the choice\n");
+scanf("%d",&a);
+switch(a)
+{
+case 1: sum=*p + *q;
+printf("Sum of the numbers = %d\n",sum);
+break;
+case 2: printf("Before swapping\nfirst = %d\nsecond = %d\n",first,second);
+temp = *q;
+*q = *p;
+*p = temp;
+printf("Before swapping\nfirst = %d\nsecond = %d\n",first,second);
+break;
+default: printf("Invalid");
+break;
+}
+}

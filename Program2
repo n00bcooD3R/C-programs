@@ -1,0 +1,14 @@
+Read two numbers, add them and display their sum
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include<stdio.h>
+void main()
+{
+int first_number,second_number,sum;
+printf("Enter the first number : ");
+scanf("%d",&first_number);
+printf("Enter the second number : ");
+scanf("%d",&second_number);
+sum = first_number + second_number;
+printf("The Sum of %d and %d is %d",first_number,second_number,sum);
+}

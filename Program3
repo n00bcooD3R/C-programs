@@ -1,0 +1,12 @@
+Read the radius of a circle, calculate its area and display it 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include<stdio.h>
+void main()
+{
+float radius,area;
+printf("Enter the Radius of the Circle : ");
+scanf("%f",&radius);
+area=3.14*radius*radius;
+printf("The Area of the Circle with Radius %f is %f",radius,area);
+}

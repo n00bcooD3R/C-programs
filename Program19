@@ -1,0 +1,117 @@
+Implement a menu driven program for performing matrix addition, multiplication and finding the
+transpose. Use functions to (i) read a matrix, (ii) find the sum of two matrices, (iii) find the product of two
+matrices, (i) find the transpose of a matrix and (v) display a matrix.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include<stdio.h>
+void displayMatrix(int m,int n,int mat[10][10])
+{
+int i,j;
+for (i=0;i<m;i++)
+{
+for(j=0;j<n;j++)
+{
+printf("%d ",mat[i][j]);
+}
+printf("\n");
+}
+printf("\n\n");
+}
+void readMatrix(int m,int n,int mat[10][10])
+{
+int i,j;
+for (i=0;i<m;i++)
+{
+for (j=0;j<n;j++)
+{
+printf("Enter the Element at %d %d : ",i+1,j+1);
+scanf("%d",&mat[i][j]);
+}
+}
+displayMatrix(m,n,mat);
+}
+void sumMatrix(int m1,int n1,int m2,int n2,int mat1[10][10],int mat2[10][10],int sum[10][10])
+{
+int i,j;
+if(m1!=m2 && n1!=n2)
+{
+printf("Addition not possible");
+}
+else
+{
+for (i=0;i<m1;i++)
+{
+for(j=0;j<n1;j++)
+{
+sum[i][j]=mat1[i][j]+mat2[i][j];
+}
+}
+printf("The Sum matrix is \n");
+displayMatrix(m1,n1,sum);
+}
+}
+void transposeMatrix(int m,int n,int mat[10][10],int tran[10][10])
+{
+int i,j;
+for (i=0;i<m;i++)
+{
+for (j=0;j<n;j++)
+{
+tran[i][j]=mat[j][i];
+}
+}
+displayMatrix(m,n,tran);
+}
+void multiplyMatrix(int m,int n,int p,int q,int mat1[10][10],int mat2[10][10],int mult[10][10])
+{
+int i,j,k,sum=0;
+if (n != p)
+printf("The multiplication isn't possible.\n");
+else
+{
+for (i = 0; i < m; i++)
+{
+for (j = 0; j < q; j++)
+{
+for (k = 0; k < p; k++)
+{
+sum = sum + mat1[i][k]*mat2[k][j];
+}
+mult[i][j] = sum;
+sum = 0;
+}
+}
+}
+displayMatrix(m,q,mult);
+}
+void main()
+{
+int mat1[10][10],mat2[10][10],tran[10][10]={0},sum[10][10]={0},i,j,m1,m2,n1,n2;
+int mult[10][10];
+printf(“Enter your Choice: \n1:Read the matrices \n2:Sum of matrices\n3:Product of
+matrices\n4:Transpose of a matrix\n5:Display a matrix”);
+scanf(“%d”,&c);
+switch(c){
+case 1:
+printf("Enter the rows of first matrix : ");
+scanf("%d",&m1);
+printf("Enter the columns of first matrix : ");
+scanf("%d",&n1);
+printf("Enter the rows of second matrix : ");
+scanf("%d",&m2);
+printf("Enter the columns of second matrix : ");
+scanf("%d",&n2);
+readMatrix(m1,n1,mat1);
+readMatrix(m2,n2,mat2);
+break;
+case 2:
+sumMatrix(m1,n1,m2,n2,mat1,mat2,sum);
+break;
+case 3:
+multiplyMatrix(m1,n1,m2,n2,mat1,mat2,mult);
+break;
+case 4:
+transposeMatrix(m1,n1,mat1,tran);
+default:
+printf(“Your Option is wrong... Please correct it!”);
+}

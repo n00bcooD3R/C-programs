@@ -1,0 +1,21 @@
+Implement a program to find the largest among three numbers using nested if...else
+statements
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include<stdio.h>
+void main()
+{
+int number_1, number_2, number_3;
+printf("Enter three different numbers: ");
+scanf("%d %d %d", &number_1, &number_2, &number_3);
+if(number_1>number_2)
+if(number_1>number_3)
+printf("The Largest number is %d",number_1);
+else
+printf("The Largest number is %d",number_3);
+else
+if(number_2>number_3)
+printf("The Largest number is %d",number_2);
+else
+printf("The Largest number is %d",number_3);
+}
